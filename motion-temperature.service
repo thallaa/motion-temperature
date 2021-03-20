@@ -1,0 +1,14 @@
+[Unit]
+Description=Motion video overlay temperature updater
+Documentation=https://github.com/thallaa/motion-temperature
+After=motioneye.service
+
+[Service]
+Type=simple
+ExecStart=/opt/motion-temperature/motion-temperature.py
+WorkingDirectory=/opt/motion-temperature
+Restart=always
+User=motion
+
+[Install]
+WantedBy=multi-user.target
